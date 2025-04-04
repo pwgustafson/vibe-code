@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Chain Game</title>
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Word Chain Game</h1>
+        <div class="game-rules">
+            <p>Create new words using letters from the current word. Longer words = more points!</p>
+            <p>Anagrams (same letters, different order) give bonus points!</p>
+            <p>Easy mode: Words using at least 2 letters from the current word are also accepted (fewer points).</p>
+            <p><strong>Connected to a real dictionary API</strong> - most English words will work!</p>
+            <p>Using hints will give you only half the points!</p>
+        </div>
+        <div id="game-container">
+            <div id="current-word-display">
+                <h2>Current Word: <span id="current-word"></span></h2>
+                <p>Score: <span id="score">0</span></p>
+                <button id="restart-btn">Restart Game</button>
+            </div>
+            
+            <div id="game-over" class="hidden" style="display: none !important;">
+                <div class="game-over-content">
+                    <h2>Game Over!</h2>
+                    <p>No more possible words!</p>
+                    <p>Final Score: <span id="final-score">0</span></p>
+                    <button id="play-again-btn">Play Again</button>
+                </div>
+            </div>
+            <div id="input-container">
+                <input type="text" id="word-input" placeholder="Enter a new word...">
+                <button id="submit-btn">Submit</button>
+                <button id="hint-btn">Hint</button>
+            </div>
+            <div id="hint-container">
+                <div id="hint-results" class="hidden">
+                    <h4>Possible words:</h4>
+                    <div class="hint-sections">
+                        <div class="hint-section">
+                            <h5>High Scoring Words:</h5>
+                            <ul id="original-hints" class="hint-list"></ul>
+                        </div>
+                        <div class="hint-section">
+                            <h5>Other Words:</h5>
+                            <ul id="modified-hints" class="hint-list"></ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="messages"></div>
+            <div id="word-history">
+                <h3>Word History:</h3>
+                <ul id="history-list"></ul>
+            </div>
+        </div>
+    </div>
+    <script src="/static/js/game.js"></script>
+</body>
+</html>
