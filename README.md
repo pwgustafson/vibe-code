@@ -9,6 +9,10 @@ A browser-based word game where players create new words using letters from the 
 3. Points are awarded based on the length of the new word.
 4. The new word becomes the current word for the next round.
 
+
+## UI Example
+<img src="src/static/images/word-chain-game.png" alt="Alt text" width="600"/>
+
 ## Project Structure
 
 ```
